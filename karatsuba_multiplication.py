@@ -1,4 +1,4 @@
-def addZeros(x, n, left=True):
+def AddZeros(x, n, left=True):
     """
     x is a string
     n is number of zeros to be added
@@ -30,8 +30,8 @@ def KaratsubaMultiplier(x, y):
         n += 1
 
     ## Adding leading zeros to make even lengths
-    x = addZeros(x, n - len(x))
-    y = addZeros(y, n - len(y))
+    x = AddZeros(x, n - len(x))
+    y = AddZeros(y, n - len(y))
 
     n_half = int(n / 2)
     
@@ -45,6 +45,6 @@ def KaratsubaMultiplier(x, y):
     ac = KaratsubaMultiplier(a, c)
     bd = KaratsubaMultiplier(b, d)
     abcd = KaratsubaMultiplier(int(a) + int(b), int(c) + int(d))
+    sub = abcd - ac - bd
 
-    return (10 ** n) * ac + bd + (10 ** n_half) * (abcd - ac - bd)
-
+    return int(AddZeros(str(ac), n, False)) + bd + int(AddZeros(str(sub), n_half, False))
