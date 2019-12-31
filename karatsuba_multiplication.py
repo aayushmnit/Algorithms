@@ -10,7 +10,7 @@ def addZeros(x, n, left=True):
         return x + str(0) * n
 
 
-def karatsubaMultiplier(x, y):
+def KaratsubaMultiplier(x, y):
     ## Convert x and y to string for easier string manipulation
     x = str(x)
     y = str(y)
@@ -42,9 +42,9 @@ def karatsubaMultiplier(x, y):
     d = y[n_half:]
 
     ## Recursion you beauty
-    ac = karatsubaMultiplier(a, c)
-    bd = karatsubaMultiplier(b, d)
-    abcd = karatsubaMultiplier(int(a) + int(b), int(c) + int(d))
+    ac = KaratsubaMultiplier(a, c)
+    bd = KaratsubaMultiplier(b, d)
+    abcd = KaratsubaMultiplier(int(a) + int(b), int(c) + int(d))
 
     return (10 ** n) * ac + bd + (10 ** n_half) * (abcd - ac - bd)
 
